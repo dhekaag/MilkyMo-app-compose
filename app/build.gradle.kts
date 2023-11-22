@@ -8,7 +8,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.learn_compose_1"
+        applicationId = "com.milkymo"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

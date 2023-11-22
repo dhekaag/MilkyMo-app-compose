@@ -17,7 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import com.example.milkymo.data.MainViewModel
-import com.example.milkymo.features.authentication.login.LoginScreen
+import com.example.milkymo.features.authentication.forgetid.ShowForgetIdScreen
 import com.example.milkymo.ui.theme.MilkyMoTheme
 
 
@@ -48,7 +48,7 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun FarmologiApp() {
-        LoginScreen()
+        ShowForgetIdScreen()
     }
 
     @Preview(showBackground = true)

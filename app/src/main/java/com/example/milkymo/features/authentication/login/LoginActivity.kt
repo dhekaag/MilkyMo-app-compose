@@ -156,12 +156,12 @@ fun LoginScreen() {
                     ElevatedButton(
                         onClick = {},
                         modifier = Modifier.fillMaxWidth(),
-                        colors = ButtonDefaults.elevatedButtonColors(containerColor = BlueOcean, contentColor = Color.White)
+                        colors = ButtonDefaults.elevatedButtonColors(containerColor = BlueOcean)
                     ) {
-                        Text(text = "MASUK", style = TextStyle(
-                            fontWeight = FontWeight.SemiBold,
-                            letterSpacing = 0.85.sp
-                        )
+                        Text(
+                            text = "MASUK",
+                            style = MaterialTheme.typography.titleMedium,
+                            color = Color.White
                         )
                     }
                 }
