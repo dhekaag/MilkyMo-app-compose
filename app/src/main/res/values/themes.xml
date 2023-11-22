@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.LearnCompose1" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.FarmologiTheme." parent="android:Theme.Material.Light.NoActionBar" />
     <style name="Theme.FarmologiTheme" parent="android:ThemeOverlay.Material.Dark.ActionBar"/>
-    <style name="Theme.SplashScreen.NoActionBar">
+    <style name="Theme.SplashScreen.NoActionBar" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:windowActionBar">false</item>
+        <item name="android:forceDarkAllowed">false</item>
         <item name="android:windowNoTitle">true</item>
     </style>
 </resources>
