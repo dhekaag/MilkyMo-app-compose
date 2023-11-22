@@ -1,2 +1,2 @@
 # farmologi-app-compose
-Farmologi app using jetpack compose. This application is for livestock in digital recording of digital milk weighing results. 
+Farmology app using jetpack compose. This is for milk collection center in digital recording of milk weighing results. 
