@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package com.example.milkymo
+package com.example.milkymo.features.mainActivity
 
 import android.annotation.SuppressLint
 import android.content.pm.ActivityInfo
@@ -8,22 +8,21 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Surface
-import androidx.compose.runtime.Composable
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
-import com.example.milkymo.data.MainViewModel
-import com.example.milkymo.features.authentication.forgetid.ShowForgetIdScreen
+import com.example.milkymo.features.navgraph.NavGraph
 import com.example.milkymo.ui.theme.MilkyMoTheme
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    private val viewModel:MainViewModel by viewModels()
+    private val viewModel: MainViewModel by viewModels()
 
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter", "SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,30 +31,18 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         installSplashScreen().apply {
             setKeepOnScreenCondition{
-                viewModel.isLoading.value
+                viewModel.splashCondition.value
             }
         }
         setContent {
             MilkyMoTheme{
-               Surface(
-                   modifier = Modifier.fillMaxSize(),
-               ) {
-                   FarmologiApp()
-               }
+                Box(
+                    modifier = Modifier.background(MaterialTheme.colorScheme.background)
+                ) {
+                    NavGraph(startDestination = viewModel.startDestination.value)
+                }
             }
         }
     }
-
-    @Composable
-    fun FarmologiApp() {
-        ShowForgetIdScreen()
-    }
-
-    @Preview(showBackground = true)
-    @Composable
-    fun FarmologiAppPreview() {
-        MilkyMoTheme{
-            FarmologiApp()
-        }
-    }
 }
+

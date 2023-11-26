@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Learn-Compose-1"
+rootProject.name = "MilkyMoApp"
 include(":app")
  
